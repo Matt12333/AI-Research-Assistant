@@ -15,7 +15,12 @@ def fetch_mainpage_date():
     soup = BeautifulSoup(page, 'html.parser')
     
     # Fetch main page article information
-    main_page_data = soup.find('td').ul
+    td = soup.find('td')
+
+    if td is None:
+        return print("Cloudflare blocked KD Nuggets today")
+    
+    main_page_data = td.find('ul')
     
     # Fetch the article information
     articles = main_page_data.find_all(class_='li-has-thumb')
@@ -86,5 +91,6 @@ def fetch_kdnuggets_articles():
                 text += tag.text
 
         articles.append(text)
+
 
     return articles
