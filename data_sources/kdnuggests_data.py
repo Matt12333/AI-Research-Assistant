@@ -18,7 +18,8 @@ def fetch_mainpage_date():
     td = soup.find('td')
 
     if td is None:
-        return print("Cloudflare blocked KD Nuggets today")
+        print("Cloudflare blocked KD Nuggets today")
+        return []
     
     main_page_data = td.find('ul')
     
@@ -94,3 +95,4 @@ def fetch_kdnuggets_articles():
 
 
     return articles
+
