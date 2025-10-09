@@ -21,7 +21,7 @@ def transfer_mit_articles(mit_articles, yesterdays_date, daily_folder_path, hist
             with open(historical_file_path, "w", encoding="utf-8") as f:
                 f.write(article)
 
-            return len(mit_articles)
+        return len(mit_articles)
         
     else:
         return len(mit_articles)
@@ -74,4 +74,5 @@ def place_articles_in_data_folder():
 
 
         
+
 
